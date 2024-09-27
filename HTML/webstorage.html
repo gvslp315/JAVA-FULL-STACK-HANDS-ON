@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<<device-width>>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <div id="result"></div>
+    <div id="result1"></div>
+    <script>
+        //storing data
+        sessionStorage.setItem("name","lakshmi pathi");
+        localStorage.setItem("email","gvslp@315");
+
+
+        //read the data
+
+        document.getElementById("result").innerHTML="<b>Name:"+sessionStorage.getItem("name")+
+            "<br> Email"+localStorage.getItem("email")+"</br>";
+
+        //remove the data
+
+        localStorage.removeItem("name");
+
+         //read the data
+
+         document.getElementById("result1").innerHTML="<b>Name:"+localStorage.getItem("name")+
+            "<br> Email"+localStorage.getItem("email")+"</br>";
+
+    </script>
+</body>
+</html>
