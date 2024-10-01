@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body>
+    <script>
+        var names=["shiva","omsai","charan","koushik"]
+        document.write("<br>Array length: "+names.length);
+        document.write("<br>arrays elements: "+names);
+        for(let i of names)
+            document.write("<br>"+i);
+        names[2]="chandu"
+        document.write("<br>Array elements: "+names);
+
+        names.push("allu arjun")
+        document.write("<br>Array elements: "+names);
+
+        names.pop()
+        document.write("<br>Array elements: "+names);
+
+        names.unshift("praneeth")//add the element at starting in array
+        document.write("<br>Array elements: "+names);
+
+        names.shift()//remove element at starting in an array
+        document.write("<br>Array elements: "+names);
+
+        names.splice(1,3)//it will remove elements from the array starting to how many elemnts we need to remove
+        document.write("<br>Array elements: "+names);
+
+        names.length=4
+        document.write("<br>Array elements: "+names);
+
+        names.length=1
+        document.write("<br>Array elements: "+names);
+
+        var fruits=new Array("apple","pine apple","banana")
+        document.write("<br>Array elements: "+fruits);
+    </script>
+    
+</body>
+</html>

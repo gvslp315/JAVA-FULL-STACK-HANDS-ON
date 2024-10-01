@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+</head>
+<body>
+    <script>
+        let employee={eid:101,ename:"charan",esalary:2000};
+
+        //before ES6
+        let id=employee.eid;
+        let name=employee.ename;
+        let salary=employee.esalary;
+        document.write("<br>Employee id: "+id);
+        document.write("<br>Employee name: "+name);
+        document.write("<br>Employee salary: "+salary);
+
+        //from ES6
+
+        let {ename,eid,esalary}=employee
+        document.write("<br>Employee id:"+eid);
+        document.write("<br>Employee name:"+ename);
+        document.write("<br>Employee salary:"+esalary);
+
+        let {ename:n,eid:i,esalary:s}=employee
+        document.write("<br>Employee id:"+eid);
+        document.write("<br>Employee name:"+ename);
+        document.write("<br>Employee salary:"+esalary);
+
+        //java script destructuring array assignment
+
+        let fruit=["apple","banana","mango","grape"]
+        let [x]=fruit
+      
+        document.write("<br>Employee salary:"+x);
+
+        let[j,...k]=fruit
+       
+        document.write("<br>fruit :"+j);
+        document.write("<br>fruit: :"+k);
+        
+    </script>
+    
+</body>
+</html>

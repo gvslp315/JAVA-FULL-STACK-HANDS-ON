@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //java script function as a variable
+        const sum=function(x,y){
+            return x+y
+        }
+        document.write(sum(10,20));
+
+        //java script arrow function with one statememt
+
+        const sub=(x,y)=>x-y;
+        document.write("<br>"+sub(20,10));
+
+        //java script function with multiple statements
+
+        const fact=(n)=>{
+            let f=1;
+            for(let i=1;i<=n;i++){
+                f=f*i;
+            }
+            return f
+        }
+        document.write("<br>"+fact(5));
+
+        //java script function without parameters
+
+        const greeting=()=>"hello welcome"
+        document.write("<br>"+greeting())
+        
+    </script>
+    
+</body>
+</html>

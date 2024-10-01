@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+         
+         function calc(){
+            var n1= parseInt(document.getElementById("num1").value);
+         var n2= parseInt(document.getElementById("num2").value);
+         var calc=0;
+         var op=document.getElementById("op").value;
+         var result = "";
+            switch(op){
+            case 'Add':
+                calc=n1+n2
+                result ="<font color=green><b> Addition   is :"
+            +calc+ "</b></font>"
+            break;
+            case 'Sub':
+                calc=n1-n2
+                result ="<font color=green><b>Subtraction of   is :"
+            +calc+ "</b></font>"
+            break;
+            case 'Mul':
+                calc=n1*n2
+                result="<font color=green><b>Multiplication of   is :"
+            +calc+ "</b></font>"
+            break;
+            case 'Div':
+                calc=n1/n2
+                result="<font color=green><b>Division of   is :"
+            +calc+ "</b></font>"
+            break;
+         }
+         document.getElementById("result").innerHTML = result;
+        }
+    </script>
+   
+</head>
+<body>
+    enter first number<input type="text" id="num1"><br>
+    enter second number<input type="text" id="num2"><br>
+    Operator<select id="op">
+        <option>select</option>
+        <option >Add</option>
+        <option value="Sub">Sub</option>
+        <option value="Mul">Mul</option>
+        <option value="Div">Div</option>
+        
+    </select>
+    <br>
+    <button onclick="calc()">Calculate</button>
+    <div id="result"></div>
+    
+</body>
+</html>

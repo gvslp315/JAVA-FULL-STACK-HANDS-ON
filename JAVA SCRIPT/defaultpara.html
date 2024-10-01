@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+<body>
+    <script>
+        const sum=(x,y=15)=>x+y
+        document.write("<br> addition"+sum(10,20))
+        document.write("<br> addition"+sum(20))
+        document.write("<br> addition"+sum())
+
+        const sub=(x=20,y=15)=>x-y;
+        document.write("<br> substration"+sub(20,10))
+        document.write("<br> substration"+sub(20))
+        document.write("<br> substration"+sub({y:26}))
+
+        //java script function with rest parameter
+        const add=(...arr)=>{
+            document.write("<br> array length is :  "+arr.length)
+            let sum=0;
+            for(let i of arr){
+                sum+=i;
+            }
+            return sum;
+        }
+        document.write("<br> sum of all the numbers :  "+add(10,49,39,49,34))
+         //java script function with rest parameter
+         const add1=(x,y,...arr)=>{
+            document.write("<br> array length is :  "+arr.length)
+            let sum=0;
+            for(let i of arr){
+                sum+=i;
+            }
+            return sum;
+        }
+        document.write("<br> sum of all the numbers :  "+add1(10,49,39,49,34))
+
+        //java script template literals
+
+        var firstname="charan"
+        var lastname="sai"
+        document.write("<br>first name: "+firstname)
+        document.write("<br>lastname :"+lastname)
+        document.write(`<br>lastname : ${lastname}`)
+        document.write(`<br>lastname :${lastname}`)
+
+    </script>
+    
+</body>
+</html>

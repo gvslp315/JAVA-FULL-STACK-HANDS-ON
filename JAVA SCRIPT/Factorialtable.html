@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <script>
+     function fact(){
+        var n=parseInt(document.getElementById("num").value)
+        fact=1
+        for(var i=1;i<=n;i++){
+            fact=fact*i;
+document.getElementById("result").innerHTML+="<tr><td>"+i+"</td><td>"+fact+"</td></tr>"
+    
+          
+        }
+    }
+   </script>
+   
+</head>
+<body>
+    enter a number<input type="text" id="num2"><br>
+    <button onclick="fact()">factorial</button>
+<table id="result">
+    <tr><th>number</th><th>factorial</th></tr>
+
+</table>
+<input type="text" id="num" value="Enter a value" onfocus="this.value=''" onblur="fact()"/>
+    
+</body>
+</html>

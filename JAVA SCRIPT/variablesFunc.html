@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var a=10,b=20  //global scope variable
+
+        function myfun(){
+            document.write("<br>welcome to javascript")
+        }
+
+        function add(){
+            let sum=a+b;
+            document.write("<br> Addition  "+sum)
+
+            const pi=3.14;
+
+        }
+
+    </script>
+
+</head>
+<body>
+   <button onclick="myfun()" >click</button>
+   <button onclick="add()" >Addition</button>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <script>
+        function fact(){
+          var n= parseInt(document.getElementById("n").value);
+          var fact=1
+          for(let i=1;i<=n;i++){
+            fact=fact*i;
+          }
+          document.getElementById("result").innerHTML="<font color=green><b>Factorial of   "+n+"is :"
+            +fact+ "</b></font>"
+
+        }
+    </script>
+</head>
+<body>
+    Enter the number<input type="text" id="n">
+    <br>
+    <button onclick="fact()">factorial</button>
+    
+    <div id="result">
+
+    </div>
+</body>
+</html>
