@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <script>
+     var flag=false;
+     function showHide(){
+        if(flag==false){
+            document.getElementById("mydiv").style.visibility="hidden";
+        }
+        else{
+            document.getElementById("mydiv").style.visibility="visible";
+        }
+        flag=!flag;
+
+        let animals=["dog","cat","fish"];
+        var myList="<ul>";
+        for(let i of animals){
+            myList+="<li onclick=setImage('"+i+"')>"+i+"</li>"
+
+        }
+        myList+="</ul>"
+        document.getElementById("mydiv").innerHTML=myList;
+
+        
+     }
+     function setImage(i){
+            document.getElementById("myimagediv").innerHTML="<br>You have Selected: "+i;
+
+            switch(i){
+                case 'dog':
+                    document.getElementById("myimagediv").innerHTML+="<br><img src='dog.jpg' width=200 height=100>"
+                    break;
+                case 'cat':
+                    document.getElementById("myimagediv").innerHTML+="<br><img src='cat.jpg' width=200 height=100>"
+                    break;
+
+            }
+
+
+        }
+   </script>
+   
+</head>
+<body>
+    <button onclick="showHide()">show or hide</button>
+    <br><br>
+    <div id="mydiv" style="width:300px;height: 200px;border: 2px solid green;border-radius:25px;"></div>
+   
+    <div id="myimagediv" style="width:300px;height: 200px;border: 2px solid green;border-radius:25px;">
+
+    </div>
+    
+</body>
+</html>

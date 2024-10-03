@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+</head>
+<body>
+    <script>
+        //JAVA SCRIPT -SET
+
+        let set1=new Set();
+        let set2=new Set([10,20,"charan"]);
+        for(let i of set2.values())
+            document.write("<br>" +i)
+        set2.add(30);
+        for(let i of set2.values())
+            document.write("<br>" +i)
+        set2.add(30);
+        for(let i of set2.values())
+            document.write("<br>" +i)
+    
+        document.write("<br>"+set2.has(30))
+
+        set2.delete(30);
+        document.write("<br>"+set2.has(30))
+
+        let set3=new WeakSet()
+        let employee1={id:101,name:"charan",salary:"190809"};
+        let employee2={id:101,name:"shiva",salary:"190809"};
+        
+        set3.add(employee1);
+        set3.add(employee2)
+        document.write("<br>"+set3.has(employee1))
+        
+        
+        
+
+    </script>
+    
+</body>
+</html>

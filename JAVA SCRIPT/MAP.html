@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body>
+    <script>
+        let map1=new Map();
+
+        map1.set(1,"java")
+        map1.set(2,"python")
+        map1.set(3,"devops");
+        document.write(map1.values())
+        for(let i of map1.values())
+            document.write("<br>"+i)
+
+        let map2=new Map([[10,"lakshmi"],[20,"shiva"],[30,"omsai"]])
+        for(let [k,v] of map2){
+            document.write("<br>"+k+"==>"+v);
+        }
+
+        map1.delete(2);
+        for(let [k,v] of map2){
+            document.write("<br>"+k+"==>"+v);
+        }
+
+        let map3=new Map();
+        map3.set(101,{id:101,name:"shiva",salary:30897})
+        map3.set(102,{id:102,name:"omsai",salary:30897})
+        map3.set(103,{id:103,name:"nitin",salary:308807})
+
+        document.write("<br>"+map3);
+
+        for(let [key,emp] of map3){
+            let {id,name,salary}=emp
+            document.write("<br>"+key+"=>{id:"+id+",name:"+name+" ,salary:"+salary+"}")
+        }
+
+        //WEAK MAP
+        let map4=new WeakMap();
+        let key1={id:101}
+        map4.set(key1,{id:101,name:"shiva",salary:30897})
+        map4.set({id:102},{id:102,name:"omsai",salary:30897})
+        map4.set({id:103},{id:103,name:"nitin",salary:308807})
+
+        document.write("<br>"+map3);
+
+        map4.delete(key1)
+        document.write(map4.has(key1))
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+</head>
+<body>
+    <script>
+        class Employee{
+            constructor(eid,ename,esalary){
+                this.eid=eid;
+                this.ename=ename;
+                this.esalary=esalary
+
+            }
+            display(){
+                document.write("<br>Employee id:"+this.eid);
+                document.write("<br>Employee name:"+this.ename);
+                document.write("<br>Employee salary:"+this.esalary);
+            }
+        }
+        let emp1=new Employee(101,"lp",19302)
+        let emp2=new Employee(102,"shiva",12345)
+
+        emp1.display()
+        emp2.display()
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <script>
+     var flag=false;
+     function showHide(){
+        if(flag==false){
+            document.getElementById("mydiv").style.visibility="hidden";
+        }
+        else{
+            document.getElementById("mydiv").style.visibility="visible";
+        }
+        flag=!flag;
+
+        let animals=["dog","cat","fish"];
+        var myList="<ul>";
+        for(let i of animals){
+            myList+="<li>"+i+"</li>"
+
+        }
+        myList+="</ul>"
+        document.getElementById("mydiv").innerHTML=myList;
+
+        function setImage(i){
+
+
+        }
+     }
+   </script>
+   
+</head>
+<body>
+    <button onclick="showHide()">show or hide</button>
+    <br><br>
+    <div id="mydiv" style="width:300px;height: 200px;border: 2px solid green;border-radius:25px;"></div>
+   
+    
+    
+</body>
+</html>
