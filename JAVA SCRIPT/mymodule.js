@@ -1,7 +1,7 @@
 // myModule.js
 
 const myDefaultFunction = () => {
-    document.write("This is the default function!");
+    console.log("This is the default function!");
   };
   
   const myVariable = 42;
