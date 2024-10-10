@@ -1,0 +1,19 @@
+<p>structuraldirective works!</p>
+<br><button (click)="changeflag()">change div or hide</button>
+
+<div *ngIf="flag" style="width: 200px; height: 200px; border:2px solid orange">
+    <ol>
+        <li *ngFor="let e of arr" (click)="selecteditem(e)">{{e}}</li>
+    </ol>
+    <b>selected item:{{selecteditem1}}</b>
+
+    <div [ngSwitch]="selecteditem1">
+        <img src="ntr.jpg" *ngSwitchCase="'ntr'" width="100px" height="100px">
+        <img src="dog.jpg" *ngSwitchCase="'dog'" width="100px" height="100px">
+        <img src="shiva.jpg" *ngSwitchCase="'shiva'" width="100px" height="100px">
+        <font  color=brown *ngSwitchDefault><b>in valid</b></font>
+    </div>
+</div>
+
+<br>
+<p [ngStyle]="myStyle">i am ngstyle exampple</p>

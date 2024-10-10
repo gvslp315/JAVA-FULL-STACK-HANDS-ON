@@ -23,46 +23,48 @@
             background-color: aqua;
             text-align: center;
             border: 4px solid aqua;
+            color: brown;
         }
         input:hover{
             cursor: pointer;
         }
     </style>
+    <script src="democalculatorr.js"></script>
 </head>
 <body>
-    <table class="calc">
+    <table class="calc" align="center">
         <tr>
-        <th colspan="4"><input type="text"></th>
+        <th colspan="4"><input type="text" id="inp" placeholder="0"></th>
         </tr>
         <tr>
-            <td><input style="font-size: 20px;" type="button" value="C" ></td>
-            <td><input type="button" value="%" ></td>
-            <td><input type="button" value="/" ></td>
-            <td><input type="button" value="<=" ></td>
+            <td><button onclick="clearInput()">C</button></td>
+            <td><button onclick="appendtoInput('%')">%</button></td>
+            <td><button onclick="appendtoInput('/')">/</button></td>
+            <td><button onclick="appendtoInput('<=')"><=</button></td>
         </tr>
         <tr>
-            <td><input type="button" value="7" ></td>
-            <td><input type="button" value="8" ></td>
-            <td><input type="button" value="9" ></td>
-            <td><input type="button" value="*" ></td>
+            <td><input type="button" value="7" onclick="appendtoInput(value)"></td>
+            <td><input type="button" value="8" onclick="appendtoInput(value)"></td>
+            <td><input type="button" value="9" onclick="appendtoInput(value)"></td>
+            <td><input type="button" value="*" onclick="appendtoInput(value)"></td>
         </tr>
         <tr>
-            <td><input type="button" value="4" ></td>
-            <td><input type="button" value="5" ></td>
-            <td><input type="button" value="6" ></td>
-            <td><input type="button" value="-" ></td>
+            <td><input type="button" value="4" onclick="appendtoInput(value)"></td>
+            <td><input type="button" value="5" onclick="appendtoInput(value)"></td>
+            <td><input type="button" value="6" onclick="appendtoInput(value)"></td>
+            <td><input type="button" value="-" onclick="appendtoInput(value)"></td>
         </tr>
         <tr>
-            <td><input type="button" value="1" ></td>
-            <td><input type="button" value="2" ></td>
-            <td><input type="button" value="3" ></td>
-            <td><input type="button" value="+" ></td>
+            <td><input type="button" value="1" onclick="appendtoInput(value)"></td>
+            <td><input type="button" value="2" onclick="appendtoInput(value)"></td>
+            <td><input type="button" value="3" onclick="appendtoInput(value)"></td>
+            <td><input type="button" value="+" onclick="appendtoInput(value)"></td>
         </tr>
         <tr>
-            <td><input type="button" value="00" ></td>
-            <td><input type="button" value="0" ></td>
-            <td><input type="button" value="." ></td>
-            <td><input type="button" value="=" ></td>
+            <td><input type="button" value="00" onclick="appendtoInput(value)"></td>
+            <td><input type="button" value="0" onclick="appendtoInput(value)"></td>
+            <td><input type="button" value="." onclick="appendtoInput(value)"></td>
+            <td><input type="button"  onclick="calculateResult()">=</td>
         </tr>
     </table>
     

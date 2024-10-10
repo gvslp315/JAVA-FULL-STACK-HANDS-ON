@@ -1,0 +1,22 @@
+
+<div>
+    <h2>Factorial Calculator</h2>
+    <input type="number" [(ngModel)]="number" placeholder="Enter a number" />
+    <button (click)="onSubmit()">Calculate Factorial</button>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Number</th>
+          <th>Factorial</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let result of results">
+          <td>{{ result.number }}</td>
+          <td>{{ result.factorial }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

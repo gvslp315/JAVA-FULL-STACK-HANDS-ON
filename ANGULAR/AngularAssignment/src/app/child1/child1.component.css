@@ -1,0 +1,12 @@
+.myclass{
+    background-color: red;
+    border: 5px solid black;
+    width: 250px;
+    height: 250px;
+    color: violet;
+    text-align: center;
+    position: relative;
+    border-radius: 25%;
+    left: 50px;
+
+}
