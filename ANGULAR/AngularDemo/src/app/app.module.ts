@@ -11,6 +11,10 @@ import { FormsModule } from '@angular/forms';
 import { TwowaybindingComponent } from './twowaybinding/twowaybinding.component';
 import { StructuraldirectiveComponent } from './structuraldirective/structuraldirective.component';
 import { AttributedirectiveComponent } from './attributedirective/attributedirective.component';
+import { CalculatorService } from './calculator.service';
+import { ServicecomponeComponent } from './servicecompone/servicecompone.component';
+import { FactorialService } from './factorial.service';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -21,14 +25,19 @@ import { AttributedirectiveComponent } from './attributedirective/attributedirec
     PropertyBindingComponent,
     TwowaybindingComponent,
     StructuraldirectiveComponent,
-    AttributedirectiveComponent
+    AttributedirectiveComponent,
+    ServicecomponeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
-  providers: [],
+  providers: [
+    CalculatorService,
+    FactorialService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
