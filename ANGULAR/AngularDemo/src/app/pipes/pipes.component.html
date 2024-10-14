@@ -1,0 +1,18 @@
+<p>pipes works!</p>
+
+<div>
+<h1>UPPER CASE :{{name | uppercase}}</h1>
+<h1>LOWER CASE :{{name | lowercase}}</h1>
+<h1>Title CASE :{{name | titlecase}}</h1>
+<hr/>
+<br>
+<h2>Date Pipe {{date}}</h2>
+<h2>Date Pipe {{date | date: 'dd/mm/yyyy'}}</h2>
+<h2>Date Pipe {{date | date: 'dd-mm-yyyy'}}</h2>
+<h2>Date Pipe {{date | date: 'fullDate'}}</h2>
+<h2>Date Pipe {{date | date: 'fullDate' | uppercase}}</h2>
+<hr/>
+<br>
+<h2>Percent Pipe {{1234|percent}}</h2>
+<h2>Currency Pipe {{123|currency:"USD"}}</h2>
+</div>
