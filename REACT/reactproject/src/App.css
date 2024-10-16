@@ -1,0 +1,30 @@
+.text{
+  color:red;
+  border: 5px solid black;
+  width:500px;
+  height: 400px;
+  background-color: greenyellow;
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  border-radius: 25px;
+
+}
+.Child{
+  color:black;
+  background-color: green;
+  width: 800px;
+  height: 600px; 
+  border: 5px solid black;
+}
+.child1{
+  color:black;
+  background-color: rgb(105, 128, 0);
+  width: 400px;
+  height: 300px; 
+  border: 5px solid blue;
+  position: absolute;
+  top: 60px;
+  left: 40px;
+  border-radius: 25px;
+}
