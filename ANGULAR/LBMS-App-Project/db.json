@@ -1,0 +1,32 @@
+{
+  "library": [
+    {
+      "id": "101",
+      "bookName": "the time machine",
+      "bookShelf": "36",
+      "bookPrice": "499",
+      "bookLang": "English"
+    },
+    {
+      "id": "102",
+      "bookName": "Devara",
+      "bookShelf": "45",
+      "bookPrice": "99",
+      "bookLang": "Telugu"
+    },
+    {
+      "id": "130",
+      "bookName": "PUSHPA",
+      "bookShelf": "21",
+      "bookPrice": "9999",
+      "bookLang": "HINDI"
+    },
+    {
+      "id": "315",
+      "bookName": "Vikram",
+      "bookShelf": "10",
+      "bookPrice": "999",
+      "bookLang": "Tamil"
+    }
+  ]
+}
