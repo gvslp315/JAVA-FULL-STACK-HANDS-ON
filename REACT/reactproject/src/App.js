@@ -1,31 +1,128 @@
-import { Component } from "react";
+import Employee from "./Employee";
 
-
-
-
-
-
-
-
-
-class App extends Component{
-  render(){
-    return(
-      <div>
-        Enter first number<input type="text"/><br></br>
-        Enter Second  number<input type="text"/><br></br>
-        <select>
-          <option>select</option>
-          <option>Addition</option>
-          <option>Substraction</option>
-          <option>Multiplication</option>
-          <option>Division</option>
-        </select><br></br>
-        <button>calculate</button>
-      </div>
-    )
-  }
+function App(){
+ return(
+  <Employee></Employee>
+ )
 }
+
+
+
+
+// import States from "./States";
+// import Set from "./setState"
+// import Sum from "./sumState"
+// function App(){
+
+//   return(
+//     <>
+//     <b>I am App Component</b>
+//      <States name="prabhas"></States>
+//      <Set></Set>
+//      <Sum></Sum>
+     
+
+//     </>
+//   )
+// }
+
+
+
+
+
+
+
+
+
+//   Props App component
+// import Props from './Props';
+// function App(props){
+//   let name="Ramu"
+//   return(
+//     <div>
+//       <h1>App component</h1>
+//       <h2>User ID:{props.eid}</h2>
+//       <Props name={name} email="gvslp@gmail.com"></Props>
+//     </div>
+//   )
+// }
+
+// //Default props
+// Props.defaultProps={
+//   salary:100000
+// }
+
+
+
+
+
+
+
+
+
+
+
+// import { Component } from "react";
+// //Calculator Component
+
+// class App extends Component{
+
+//   constructor(props){
+//     super(props);
+//     this.state={
+//       n1:0,
+//       n2:0,
+//       calculate:0,
+//       option:''
+//     }
+
+//     this.Calculate = this.Calculate.bind(this);
+//   }
+//      Calculate(){
+     
+//       switch(this.state.option){
+//         case "Addition":
+//           this.setState({calculate : parseInt(this.state.n1) + parseInt(this.state.n2)});
+//           break;
+//         case "Substraction":
+//           this.setState({calculate : this.state.n1 - this.state.n2});
+//           break;
+//         case "Multiplication":
+//           this.setState({calculate : this.state.n1 * this.state.n2});
+//           break;
+//         case "Division":
+//           this.setState({calculate : this.state.n1 / this.state.n2});
+//           break;
+//         default:
+//             this.setState({ calculate:0 });
+
+
+//       }
+
+//     }
+  
+//   render(){
+//     return(
+//       <div>
+//         Enter first number<input type="number" value={this.state.n1} onChange={(e)=>this.setState({n1: e.target.value})}/><br></br>
+//         Enter Second  number<input type="number" value={this.state.n2} onChange={(e)=>this.setState({n2: e.target.value})}/><br></br>
+//         <select onChange={(e)=>this.setState({option: e.target.value})}>
+//           <option >select</option>
+          
+//           <option>Addition</option>
+//           <option>Substraction</option>
+//           <option>Multiplication</option>
+//           <option>Division</option>
+//         </select><br></br>
+//         <button onClick={this.Calculate}>calculate</button>
+//         <br></br>
+//         <b>Calculaton={this.state.calculate}</b>
+//       </div>
+//     )
+//   }
+// }
+
+
 // import './App.css';
 // import Child3 from './Child3';
 
