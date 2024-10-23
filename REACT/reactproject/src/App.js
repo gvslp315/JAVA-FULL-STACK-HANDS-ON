@@ -1,8 +1,8 @@
-//import Employee from "./Employee";
+import Employee from "./Employee";
 //import Login from "./Login";
 
 //import Life from "./classlifecycle";
-import Effect from "./HookEffect";
+//import Effect from "./HookEffect";
 
 //import RenderIf from "./RenderIf";
 
@@ -11,13 +11,13 @@ import Effect from "./HookEffect";
 
 function App(){
  return(
-//   <Employee></Employee>
+  <Employee></Employee>
 //<Login></Login>
 //<RenderIf input="35"></RenderIf>
 //{/* <Counter></Counter> */}
 
 // <Life/> */
-<Effect></Effect>
+//<Effect></Effect>
 
 
  )

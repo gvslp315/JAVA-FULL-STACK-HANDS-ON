@@ -1,0 +1,16 @@
+.test{
+  color:yellow;
+  
+  align-items: center;
+  height: 1000px;
+  background-image:url('C:\java full stack\ASSIGNMENTS\REACT\reactmicroproject\public\as-a-service-954x535.jpg');
+  
+  background-size: cover; /* or 'contain' */
+  height: 100vh; /* Adjust height as needed */
+  width: 100%;
+  background-position: center;
+}
+.table{
+  color:greenyellow;
+  
+}

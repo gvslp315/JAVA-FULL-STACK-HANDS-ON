@@ -1,5 +1,5 @@
 import { Component } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 class Employee extends Component{
@@ -14,17 +14,20 @@ class Employee extends Component{
             eidError:'',
             empNameError:'',
             empSalaryError:''
+           
 
 
         }
         //this.Employee = this.Employee.bind(this);
 
     }
-  
+    // const style = {
+    // background: 'url(https://www.bing.com/images/search?view=detailV2&ccid=MPA32ocb&id=C4172E3A2D887946D3C574F2EC0D7AF455BB944A&thid=OIP.MPA32ocb1_oMX7l5lFs-5gHaDC&mediaurl=https%3a%2f%2fcapstoneguide.com%2fwp-content%2fuploads%2f2020%2f05%2femployee.png&exph=227&expw=554&q=employee+management+system+background+images+hd&simid=608050130292520470&FORM=IRPRST&ck=F3A57B49964065D5A73E49EE26CE8903&selectedIndex=3&itb=0&adlt=STRICT);'
+    // };
     validateEid = (eid) =>{
         let reg=/^[0-9]+$/;
         if(eid===''){
-            return "eid is required";
+            return "Eid is Required";
         }
         else if(!reg.test(eid)){
             return "Invalid eid"
@@ -36,10 +39,10 @@ class Employee extends Component{
     validateempName = (empName) =>{
         let reg=/^[a-zA-Z]+$/;
         if(empName===''){
-            return "emp name is required";
+            return "Emp Name is Required";
         }
         else if(!reg.test(empName)){
-            return "Invalid emp name"
+            return "Invalid Emp Name"
         }
         else{
             return null;
@@ -49,10 +52,10 @@ class Employee extends Component{
     validateempSalary = (empSalary) =>{
         let reg=/^[0-9]+$/;
         if(empSalary===''){
-            return "empSalary is required";
+            return "Emp Salary is Required";
         }
         else if(!reg.test(empSalary)){
-            return "Invalid empSlary"
+            return "Invalid Emp Salary"
         }
         else{
             return null;
@@ -95,36 +98,48 @@ class Employee extends Component{
     render(){
         return(
 
-            <div align="center" width="80%">
-                <form>
+            <div width="80%" class="container mb-3 mt-3" >
+               
+                <h1 align="center">EMPLOYEE MANAGEMENT SYSTEM</h1>
+                <form class="form-horizontal"> 
                     <div className="form-group">
-                <label for="empid">Employee ID</label>
-                <input type="text" value={this.state.eid} onChange={this.changeId}></input>
+                <label for="empid"><b>EMPLOYEE ID</b></label>
+                <input type="text" class="form-control" value={this.state.eid} onChange={this.changeId}></input>
                 <br></br>
                 <div><font color='red'><b>{this.state.eidError}</b></font></div>
                 </div>
                 <br></br>
-
-                <label for="empname">Employee NAME</label>
-                <input type="text" value={this.state.empName} onChange={this.changeName}></input>
+                <div>
+                <label for="empname"><b>EMPLOYEE NAME</b></label>
+                <input type="text" class="form-control"value={this.state.empName} onChange={this.changeName}></input>
+                </div>
                 <br></br>
+                
                 <div><font color='red'><b>{this.state.empNameError}</b></font></div>
                 <br></br>
-                <label for="empsalary">Employee SALARY</label>
-                <input type="text" value={this.state.empSalary} onChange={this.changeSalary}></input>
+                <div>
+                <label for="empsalary" ><b>EMPLOYEE SALARY</b></label>
+                <input type="text" class="form-control" value={this.state.empSalary} onChange={this.changeSalary}></input>
                 <br></br>
+                </div>
                 <div><font color='red'><b>{this.state.empSalaryError}</b></font></div>
                 <br></br>
-                <button type="submit" onClick={this.handleSubmit}>SUBMIT</button>
+                <button type="submit" className="btn btn-secondary"onClick={this.handleSubmit}>SUBMIT</button> &nbsp;&nbsp;&nbsp;
+                
+                <button className="btn btn-primary">INSERT</button>&nbsp;&nbsp;&nbsp;
+                <button className="btn btn-success" >UPDATE</button>&nbsp;&nbsp;&nbsp;
+                <button className="btn btn-danger">DELETE</button>&nbsp;&nbsp;&nbsp;
+                <button className="btn btn-warning">FIND</button>&nbsp;&nbsp;&nbsp;
+                <button className="btn btn-info">FIND ALL</button>&nbsp;&nbsp;&nbsp;
                 
                 </form>
                 <br></br>
                 {this.state.flag ? 
-                <div>
-                    <br></br>Employee Id:{this.state.eid}
-                    <br></br>Employee Name:{this.state.empName}
-                    <br></br>Employee SALARY:{this.state.empSalary}
-                </div>
+                <table >
+                    <tr><th>Employee Id</th><th>Employee Name</th><th>Employee Salary</th></tr>
+                    <tr><td>{this.state.eid}</td><td>{this.state.empName}</td><td>{this.state.empSalary}</td></tr>
+                   
+                </table>
                 :''
 
                 }
