@@ -1,0 +1,142 @@
+create table tbl_employee(eid number(10),ename varchar2(20),esalary number(10));
+desc tbl_employee;
+insert into tbl_employee values(101,'lakshmipathi',12345);
+insert into tbl_employee values(102,'shiva',16745);
+insert into tbl_employee values(103,'prasad',40000);
+insert into tbl_employee values(104,'omsai',5000);
+commit;
+select * from tbl_employee;
+-- drop table tbl_employee;
+insert into tbl_employee(eid,esalary) values(105,8000);
+insert into tbl_employee values(106,null,4000);
+select * from tbl_employee;
+commit;
+select eid ,esalary from tbl_employee;
+select *from tbl_employee where eid=101;
+select *from tbl_employee where eid!=101;
+select *from  tbl_employee where esalary>=14000;
+select *from tbl_employee where ename is null;
+
+-- In operator to display the present records in table
+
+select *from tbl_employee where eid in (101,105,108);
+
+-- NOT  In operator to display the other  records in table
+select *from tbl_employee where eid not  in (101,105,108);
+
+--LOGICAL AND
+
+select *from tbl_employee where eid   in (101,105,108) and ename is null;
+
+--LOGICAL OR
+
+select *from tbl_employee where eid   in (101,105,108) or ename is null;
+
+--BETWEEN
+select *from tbl_employee where esalary  between 5000 and 15000;
+
+--NOT BETWEEN
+select *from tbl_employee where esalary not between 5000 and 15000;
+
+--LIKE OPERATOR
+select *from tbl_employee where ename like '_a%';
+
+--NOT LIKE OPERATOR
+select *from tbl_employee where ename not like '_a%';
+
+SELECT *FROM TBL_EMPLOYEE;
+COMMIT;
+
+DELETE FROM TBL_EMPLOYEE;
+ROLLBACK;
+SELECT *FROM TBL_EMPLOYEE;
+COMMIT;
+
+--DELETE QUERY
+
+DELETE FROM TBL_EMPLOYEE WHERE EID=103;
+
+DELETE FROM TBL_EMPLOYEE WHERE ENAME LIKE '_a%';
+rollback;
+
+--UPDATE QUERY
+
+update tbl_employee set esalary=10000 where eid=102;
+select *from tbl_employee;
+
+--DISTINCT IS USED TO REMOVE DUPLICATES FROM THE COLUMN
+
+SELECT DISTINCT ESALARY FROM TBL_EMPLOYEE;
+
+--ALTER keyword is used to modify the table structure
+alter table tbl_employee add doj date;
+
+desc tbl_employee;
+
+select sysdate from dual;
+
+select sysdate from tbl_employee;
+
+
+select eid,ename,esalary+143 from tbl_employee;
+
+--alter drop a column
+alter table tbl_employee drop column doj;
+select *from tbl_employee;
+
+--alter modify a data type of a column
+alter table tbl_employee modify esalary number(25,5);
+desc tbl_employee;
+
+--alter rename the column name 
+alter table tbl_employee rename column esalary to emp_salary;
+desc tbl_employee;
+
+rename tbl_employee to tbl_my_employee;
+
+desc tbl_my_employee;
+
+create table tbbl_employee as select *from tbl_my_employee;
+
+select *from tbbl_employee;
+
+truncate table tbl_my_employee;
+desc tbl_my_employee;
+
+drop table tbl_my_employee;
+
+rename tbbl_employee to tbl_employee;
+
+select *from tbl_employee;
+
+alter table tbl_employee add dno number(5);
+
+update  tbl_employee set dno=10 where eid in (101,103,105);
+update  tbl_employee set dno=20 where eid not in (101,103,105);
+
+--GROUP BY CLAUSE
+
+select dno,count(*) from tbl_employee group by dno;
+
+select dno,count(*),sum(emp_salary),min(emp_salary),max(emp_salary),avg(emp_salary) from tbl_employee group by dno;
+
+select dno,count(*) from tbl_employee group by dno having min(emp_salary)>0;
+
+---Alias names
+select dno,count(*) as "total no of employees" from tbl_employee group by dno;
+
+--ORDER BY
+
+select *from tbl_employee order by eid;
+
+
+
+
+
+
+
+
+
+
+
+
