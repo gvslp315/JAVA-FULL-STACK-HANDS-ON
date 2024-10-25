@@ -137,10 +137,7 @@ class Insert extends Component{
             </form>
             {this.state.flag?
             <div>
-                BOOK ID:{this.state.bookId}<br></br>
-                BOOK NAME:{this.state.bookName}<br></br>
-                BOOK LANGUAGE:{this.state.bookLang}<br></br>
-                BOOK PRICE:{this.state.bookPrice}<br></br>
+              
                 <div id="Result"></div>
             </div>
             :''

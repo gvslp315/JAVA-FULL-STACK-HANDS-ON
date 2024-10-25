@@ -128,6 +128,89 @@ select dno,count(*) as "total no of employees" from tbl_employee group by dno;
 --ORDER BY
 
 select *from tbl_employee order by eid;
+-----------------------------------------------JOINS---------------------------------------------------------
+
+create table tbl_agents(agent_code number(10),agent_name varchar2(20),working_area varchar2(20));
+create table tbl_customers(customer_code number(10),customer_name varchar2(20),customer_area varchar2(20));
+desc  tbl_agents;
+desc  tbl_customers;
+
+insert into tbl_agents  values(101,'agent1','chennai');
+insert into tbl_agents  values(102,'agent2','chennai');
+insert into tbl_agents  values(103,'agent3','bengaluru');
+insert into tbl_agents  values(104,'agent4','benagluru');
+ select *from tbl_agents;
+insert into tbl_customers values(101,'customer1','chennai');
+insert into tbl_customers values(102,'customer2','chennai');
+insert into tbl_customers values(103,'customer3','chennai');
+insert into tbl_customers values(104,'customer4','bengaluru');
+insert into tbl_customers values(105,'customer5','bengaluru');
+--  drop table tbl_customers;
+-- drop table tbl_agents;;
+select *from tbl_customers;
+
+-----------------------inner join
+select tbl_agents.agent_name,tbl_customers.customer_name,tbl_customers.customer_area from 
+tbl_agents,tbl_customers where tbl_agents.working_area=tbl_customers.customer_area;
+
+------------------------EQUI INNER JOIN USING EQUAL 
+select a.agent_name,c.customer_name,c.customer_area from tbl_agents a join tbl_customers c on a.working_area=c.customer_area;
+
+----------------------NON-EQUI JOIN NOT USING EQUAL SYMBOL
+
+select a.agent_name,c.customer_name,c.customer_area from tbl_agents a join tbl_customers c on a.working_area!=c.customer_area;
+
+----------------------------LEFT OUTER JOIN
+select *from tbl_agents left outer join tbl_customers on tbl_agents.working_area=tbl_customers.customer_area;
+
+-------------------------RIGHT OUTER JOIN
+select *from tbl_agents RIGHT outer join tbl_customers on tbl_agents.working_area=tbl_customers.customer_area;
+
+SeLECT * FROM TBL_AGENTS,TBL_CUSTOMERS WHERE tbl_agents.working_area(+)=tbl_customers.customer_area;
+
+---------------------------FULL OUTER JOIN
+
+select *from tbl_agents full outer join tbl_customers on tbl_agents.working_area=tbl_customers.customer_area;
+
+------------------------------SELF JOIN 
+SELECT A.AGENT_CODE,B.AGENT_NAME FROM TBL_AGENTS A,TBL_AGENTS B WHERE A.WORKING_AREA=B.WORKING_AREA;
+
+----------------------------CROSS JOIN
+SELECT A.AGENT_CODE,B.CUSTOMER_NAME FROM TBL_AGENTS A CROSS TBL_CUSTOMERS B ;
+
+-----------------------SUB QUERY
+SELECT *FROM TBL_AGENTS WHERE WORKING_AREA=(SELECT CUSTOMER_AREA FROM TBL_CUSTOMERS WHERE CUSTOMER_CODE=101);
+
+SELECT *FROM TBL_CUSTOMERS WHERE CUSTOMER_AREA=(SELECT WORKING_AREA FROM TBL_AGENTS WHERE AGENT_NAME='agent1');
+
+-------for multi row sub query we need to use the "in" to get the output
+SELECT *FROM TBL_CUSTOMERS WHERE CUSTOMER_AREA in (SELECT WORKING_AREA FROM TBL_AGENTS WHERE AGENT_NAME='agent1' or agent_name='agent3');
+
+-----------SEQUENCE
+
+CREATE SEQUENCE SEQ_EMP_ID START WITH 1000 INCREMENT BY 1;
+
+
+SELECT SEQ_EMP_ID.NEXTVAL FROM DUAL;
+
+-------------------------------------------------VIEW------------------------------
+
+CREATE TABLE EMPLOYEE(EID NUMBER(10),ENAME VARCHAR2(20),ESALARY NUMBER(10));
+insert into employee values(1001,'koushik',10000);
+insert into employee values(100,'shiva',10234);
+insert into employee values(1002,'omsai',12345);
+insert into employee values(102,'aditya',23456);
+
+create view view_employee as select *from employee where esalary>10000;
+
+select *from view_employee;
+
+update view_employee set esalary=20000 where eid=102;
+
+select *from employee;
+
+delete from view_employee where eid=102;
+
 
 
 
