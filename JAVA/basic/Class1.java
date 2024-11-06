@@ -1,12 +1,30 @@
 package com.basic;
 
 class Mobile{
-	String brandName;
-	int price;
+	private String brandName;
+	private int price;
+	
 	Mobile(String brandName,int price){
 		this.brandName=brandName;
 		this.price=price;
 	}
+	
+	public String getBrandName() {
+		return brandName;
+	}
+	
+	public void setBrandName(String brandName) {
+		this.brandName = brandName;
+	}
+	
+	public int getPrice() {
+		return price;
+	}
+	
+	public void setPrice(int price) {
+		this.price = price;
+	}
+	
 	void display() {
 		System.out.println("brand name  "+brandName);
 		System.out.println("price "+price);
