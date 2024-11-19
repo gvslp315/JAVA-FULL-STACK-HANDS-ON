@@ -1,0 +1,14 @@
+package com.ems;
+
+import com.ems.dao.SampleDAO;
+
+public class sampleContoller {
+	public static void main(String ARGS[]) {
+		SampleDAO dao=new SampleDAO();
+		String op=request.getParameter("crud");
+		
+		
+		
+	}
+
+}

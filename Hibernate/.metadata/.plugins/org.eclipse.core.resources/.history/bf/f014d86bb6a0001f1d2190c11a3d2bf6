@@ -1,0 +1,21 @@
+package com.lbms.controller;
+
+import java.io.PrintWriter;
+
+import com.lbms.dao.LibraryDAO;
+
+public class LibraryController {
+	static LibraryDAO dao=new LibraryDAO();
+	int bookId;
+	String bookName;
+	String bookLang;
+	int bookPrice;
+	
+	public static void main(String[] args) {
+		PrintWriter out=response.getWriter();
+		String operation=request.getParameter("crud");
+		
+
+	}
+
+}

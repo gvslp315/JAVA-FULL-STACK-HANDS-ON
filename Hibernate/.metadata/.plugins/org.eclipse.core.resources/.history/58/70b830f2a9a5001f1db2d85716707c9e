@@ -1,0 +1,48 @@
+package com.employee.main;
+
+
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+import com.employee.pojo.Employee;
+
+public class EmployeeMain {
+
+	public static void main(String[] args) {
+		Configuration config = new Configuration();
+		config.configure("employee.config.xml");
+
+		SessionFactory factory = config.buildSessionFactory();
+
+		Session session = factory.openSession();
+		Transaction tn = session.beginTransaction();
+
+		Employee emp = new Employee();
+		emp.setEid(102);
+		///emp.setEname("Chandra");
+		//emp.setEsalary(50000);
+		//session.update(emp);
+		//System.out.println("Object Saved");
+		
+		session.delete(emp);
+		
+		Employee employee=session.get(Employee.class, 137);
+		System.out.println(employee.getEid()+" "+employee.getEname()+"  "+employee.getEsalary());
+		System.out.println(emp);
+		
+		List<Employee> list=session.createQuery("From Employee").list();
+		System.out.println(list);
+		
+
+		tn.commit();
+		session.close();
+		factory.close();
+
+	}
+
+}

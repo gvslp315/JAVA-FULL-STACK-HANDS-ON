@@ -49,6 +49,7 @@ public class EmployeeController  extends HttpServlet  {
 			if (n == 1) {
 				RequestDispatcher rd = request.getRequestDispatcher("Employee.jsp");
 				rd.include(request, response);
+				response.sendRedirect("");;
 				out.println("<br><h3><font align='center' color='green'>Record Inserted</font></h3>");
 			} else {
 				out.println("<br><font color='red'>Record Not Inserted</font>");

@@ -1,0 +1,40 @@
+package com.employee.main;
+
+
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+import com.employee.pojo.Employee;
+
+public class EmployeeMain {
+
+	public static void main(String[] args) {
+		Configuration config = new Configuration();
+		config.configure("employee.config.xml");
+
+		SessionFactory factory = config.buildSessionFactory();
+
+		Session session = factory.openSession();
+		Transaction tn = session.beginTransaction();
+
+		Employee emp = new Employee();
+		emp.setEid(137);
+		emp.setEname("Chandra");
+		emp.setEsalary(50000);
+		session.update(emp);
+		System.out.println("Object Saved");
+		
+		Employee employee=session.get(Employee.class, 137);
+		System.out.println(employee.getEid()+" "+employee.getEname()+"  "+employee.getEsalary());
+		
+
+		tn.commit();
+		session.close();
+		factory.close();
+
+	}
+
+}

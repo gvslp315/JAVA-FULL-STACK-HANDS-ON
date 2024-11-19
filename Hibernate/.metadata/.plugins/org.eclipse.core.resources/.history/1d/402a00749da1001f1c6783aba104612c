@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+	<class name="com.employee.pojo.Employee" table="employee">
+
+		<id name="id" column="eid">
+		<generator class="assigned"/>
+		</id>
+ 
+       
+		<property name="Name" column="ename" type="string"/>
+		<property name="salary" column="esalary" type="double"/>
+	</class>
+</hibernate-mapping>
