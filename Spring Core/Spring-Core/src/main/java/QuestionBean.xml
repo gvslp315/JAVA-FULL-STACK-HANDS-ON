@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	
+	<!--
+	<bean id="question" class="com.ems.bean.Question">
+	<property name="id" value="1"></property>
+	<property name="question" value="who is monkey in  world wide"></property>
+	<property name="answers">
+	<list>
+	<value>Preethi zinta</value>
+	<value>Preethi kapoor</value>
+	<value>monkey</value>
+	<value>Preethi</value>
+	
+	</list>
+	</property>
+	</bean>
+	
+	<bean id="question1" class="com.ems.bean.Question">
+	<constructor-arg index="0" value="2"></constructor-arg>
+	<constructor-arg index="1" value="what is the capital of ANDHRA"></constructor-arg>
+	<constructor-arg index="2"> 
+	<list>
+	<value>Amaravati</value>
+	<value>Vizag</value>
+	<value>Tirupathi</value>
+	<value>Kadapa</value>
+	
+	</list>
+	</constructor-arg>
+	</bean>
+	
+	
+	
+	<bean id="book" class="com.ems.bean.Book">
+	<property name="books" >
+	<map>
+	<entry key="preethi" value="The 10 habits of monkey"></entry>
+	<entry key="Allu" value="Pushpa"></entry>
+	<entry key="Prabhas" value="Spirit"></entry>
+	</map>
+	</property>	
+	</bean>
+	
+	<bean id="book1" class="com.ems.bean.Book">
+	<constructor-arg name="books">
+	<map>
+	<entry key="preethi" value="The 10 habits of monkey"></entry>
+	<entry key="Allu" value="Pushpa"></entry>
+	<entry key="Prabhas" value="Spirit"></entry>
+	</map>
+	</constructor-arg>
+	</bean>
+	
+	
+	
+	<bean id="A1" class="com.ems.bean.Author">
+	<property name="authorname" value="S S R"/>
+	<property name="location"  value="Hyderbad"/>
+	</bean>
+	
+	<bean id="A2" class="com.ems.bean.Author">
+	<property name="authorname" value="NEEL"/>
+	<property name="location"  value="Bengaluru"/>
+	</bean>
+	
+	<bean id="A3" class="com.ems.bean.Author">
+	<property name="authorname" value="LOKESH"/>
+	<property name="location"  value="Chennai"/>
+	</bean>
+	
+	<bean id="author" class="com.ems.bean.Book" >
+	
+	<property name="books" >
+	<map>
+	<entry key="preethi" value="The 10 habits of monkey"></entry>
+	<entry key="Allu" value="Pushpa"></entry>
+	<entry key="Prabhas" value="Spirit"></entry>
+	</map>
+	</property>	
+	
+	<property name="authors">
+	
+		<list>
+		<ref bean="A1" />
+		<ref bean="A2" />
+		<ref bean="A3" />
+		
+		</list>
+	</property>
+	
+	</bean>
+	-->
+	
+	<bean id="hello" class="com.ems.bean.Hello" scope="prototype">
+	<property name="msg" value="HI HELLO"></property>
+	</bean>
+	
+	
+</beans>

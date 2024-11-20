@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+ <!--  
+	<bean id="emp1" class="com.ems.bean.Employee">
+		<property name="eid" value="101" />
+		<property name="ename" value="Chandra" />
+		<property name="esalary" value="15000" />
+	</bean>
+	
+	<bean id="emp2" class="com.ems.bean.Employee">
+		<property name="eid" value="0" />
+		<property name="ename" value="lakshmi pathi" />
+		<property name="esalary" value="0" />
+	</bean>
+	  
+	<bean id="emp3" class="com.ems.bean.Employee">
+	<constructor-arg index="0" value="301"></constructor-arg>
+	<constructor-arg index="1" value="preethi"></constructor-arg>
+	<constructor-arg index="2" value="12345"></constructor-arg>
+	<constructor-arg index="3" ref="address2"></constructor-arg>
+	<constructor-arg index="4" ref="4"></constructor-arg>
+	
+	
+	
+	</bean>
+	<bean id="address2" class="com.ems.bean.Address">
+		<property name="city" value="Bengaluru" />
+		<property name="state" value="Karnataka" />
+	</bean>
+	
+	-->
+	
+	
+	<bean id="address1" class="com.ems.bean.Address">
+		<property name="city" value="Hyderabad" />
+		<property name="state" value="Telangana" />
+	</bean>
+	
+	<bean id="dept1" class="com.ems.bean.Department">
+	<property name="deptmanager" value="prabhas"/>
+	<property name="deptname"    value="cinematography"/>
+	
+	</bean>
+	
+	<bean id="emp4" class="com.ems.bean.Employee" autowire="byType">
+		<property name="eid" value="00143" />
+		<property name="ename" value="Allu" />
+		<property name="esalary" value="50000" />
+		
+		
+	</bean>
+	
+	
+ 
+</beans>
+ 
