@@ -1,0 +1,22 @@
+{
+  "library": [
+    {
+      "id": "136",
+      "name": "SPIRIT",
+      "lang": "kannada",
+      "price": "299"
+    },
+    {
+      "id": "101",
+      "name": "GAMEOFTHRONES",
+      "lang": "ENGLISH",
+      "price": "1999"
+    },
+    {
+      "id": "105",
+      "name": "TENET",
+      "lang": "ENGLISH",
+      "price": "2999"
+    }
+  ]
+}

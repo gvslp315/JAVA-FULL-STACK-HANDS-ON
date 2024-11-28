@@ -14,14 +14,11 @@
 import { Component } from "react";
 import Employee from "../model/Employee";
 import axios from "axios";
-
-
-
 class Insert extends Component{
     constructor(){
         super()
         this.state={
-            eid:'',
+            empId:'',
             empName:'',
             empSalary:'',
             result:'',
@@ -29,22 +26,15 @@ class Insert extends Component{
             eidError:'',
             empNameError:'',
             empSalaryError:''
-           
-
-
         }
-        //this.Employee = this.Employee.bind(this);
-
     }
-    // const style = {
-    // background: 'url(https://www.bing.com/images/search?view=detailV2&ccid=MPA32ocb&id=C4172E3A2D887946D3C574F2EC0D7AF455BB944A&thid=OIP.MPA32ocb1_oMX7l5lFs-5gHaDC&mediaurl=https%3a%2f%2fcapstoneguide.com%2fwp-content%2fuploads%2f2020%2f05%2femployee.png&exph=227&expw=554&q=employee+management+system+background+images+hd&simid=608050130292520470&FORM=IRPRST&ck=F3A57B49964065D5A73E49EE26CE8903&selectedIndex=3&itb=0&adlt=STRICT);'
-    // };
-    validateEid = (eid) =>{
+  
+    validateEid = (empId) =>{
         let reg=/^[0-9]+$/;
-        if(eid===''){
+        if(empId===''){
             return "Eid is Required";
         }
-        else if(!reg.test(eid)){
+        else if(!reg.test(empId)){
             return "Invalid eid"
         }
         else{
@@ -77,9 +67,9 @@ class Insert extends Component{
         }
     }
     changeId = (e) =>{
-        this.setState({eid:e.target.value})
+        this.setState({empId:e.target.value})
         let error=this.validateEid(this.state.eid);
-        this.setState({eidError:error})
+        this.setState({empIdError:error})
     }
     changeName = (e) =>{
         this.setState({empName:e.target.value})
@@ -96,7 +86,7 @@ class Insert extends Component{
     handleSubmit = (e) =>{
         e.preventDefault()
 
-        let error=this.validateEid(this.state.eid);
+        let error=this.validateEid(this.state.empId);
         this.setState({eidError:error})
 
         let error1=this.validateempName(this.state.empName);
@@ -108,10 +98,10 @@ class Insert extends Component{
         if(!error && !error1 && !error2){
             this.setState({flag:true})
              let employee =new Employee()
-             employee.setId(this.state.eid)
+             employee.setId(this.state.empId)
              employee.setName(this.state.empName)
              employee.setSalary(this.state.empSalary)
-             axios.post("http://localhost:3004/employees",employee)
+             axios.post("http://localhost:1212/create-employee",employee)
              .then(() =>{
              document.getElementById("Result").innerHTML="<b> Object has been inserted Successfully</b>"
              })
@@ -126,12 +116,11 @@ class Insert extends Component{
         return(
 
             <div width="80%" class="test" >
-               
                 <h1 align="center">EMPLOYEE MANAGEMENT SYSTEM</h1>
                 <form class="form-horizontal"> 
                     <div className="form-group">
                 <label for="empid"><b>EMPLOYEE ID</b></label>
-                <input type="text" class="form-control" name="eid" value={this.state.eid} onChange={this.changeId}></input>
+                <input type="text" class="form-control" name="eid" value={this.state.empId} onChange={this.changeId}></input>
                 <br></br>
                 <div><font color='red'><b>{this.state.eidError}</b></font></div>
                 </div>
@@ -141,7 +130,6 @@ class Insert extends Component{
                 <input type="text" class="form-control" name="ename" value={this.state.empName} onChange={this.changeName}></input>
                 </div>
                 <br></br>
-                
                 <div><font color='red'><b>{this.state.empNameError}</b></font></div>
                 <br></br>
                 <div>
@@ -152,24 +140,18 @@ class Insert extends Component{
                 <div><font color='red'><b>{this.state.empSalaryError}</b></font></div>
                 <br></br>
                 <button type="submit" className="btn btn-primary"onClick={this.handleSubmit} >INSERT</button> &nbsp;&nbsp;&nbsp;
-                
-               
-             
                 </form>
                 <br></br>
                 {this.state.flag ? 
                 <table align="center">
                     <tr><th>Employee Id</th><th>Employee Name</th><th>Employee Salary</th></tr>
-                    <tr><td>{this.state.eid}</td><td>{this.state.empName}</td><td>{this.state.empSalary}</td></tr>
+                    <tr><td>{this.state.empId}</td><td>{this.state.empName}</td><td>{this.state.empSalary}</td></tr>
                     <div id="Result" align="center"></div>
                 </table>
                 :''
 
                 }
-                
-                
-
-            </div>
+              </div>
         )
     }
 }

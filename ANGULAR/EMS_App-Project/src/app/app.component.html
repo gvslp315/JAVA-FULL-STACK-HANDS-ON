@@ -15,7 +15,7 @@
                                     </label>
                                     <input type="text"
                                            class="form-control"
-                                           name="id"
+                                           name="empId"
                                            #id="ngModel" ngModel
                                            required
                                            pattern="[0-9]+"
@@ -78,19 +78,46 @@
                                     Insert
                                 </button>
                             &nbsp;&nbsp;
+                            
                                 <button class="btn btn-primary" (click)="updateEmployee(EmployeeForm.value)">
                                     Update
+                                
                                 </button>&nbsp;&nbsp;
+                                
                                 <button class="btn btn-danger" (click)="deleteEmployee(EmployeeForm.value)" >
                                     Delete
                                 </button>&nbsp;&nbsp;
+                                
                                 <button class="btn btn-warning" (click)="findEmployee(EmployeeForm.value)">
                                     Find
                                 </button>
+                            
                                 &nbsp;&nbsp;
                                 <button class="btn btn-info" (click)="findAllEmployee()">
                                     Find All
                                 </button>
+
+                                &nbsp;&nbsp;
+                                <button class="btn btn-info" (click)="findEmployeeByName(EmployeeForm.value)">
+                                    Find BY Name
+                                </button>
+
+                                &nbsp;&nbsp;
+                                <button class="btn btn-danger" (click)="deleteEmployeeByName(EmployeeForm.value)">
+                                    delete BY Name
+                                </button>
+
+                                &nbsp;&nbsp;
+                                <button class="btn btn-secondary" (click)="findEmployeeBySalary(EmployeeForm.value)">
+                                    Find BY Salary
+                                </button>
+                                
+                                &nbsp;&nbsp;
+                                <hr>
+                                <button class="btn btn-danger" (click)="deleteEmployeeBySalary(EmployeeForm.value)">
+                                    Delete BY Salary
+                                </button>
+                                
                             </form> 
                         </div>
                     </div>
@@ -102,7 +129,7 @@
       <div align="center" width="80%">
         <table *ngIf="flag" border="4px solid brown" width="60%">
           <tr><th>Employee Id</th><th>Employee Name</th><th>Employee </th></tr>
-          <tr *ngFor="let emp of employeeArr"><td>{{emp.id}}</td><td>{{emp.empName}}</td><td>{{emp.empSalary}}</td></tr>
+          <tr *ngFor="let emp of employeeArr"><td>{{emp.empId}}</td><td>{{emp.empName}}</td><td>{{emp.empSalary}}</td></tr>
         </table>
 
       </div>

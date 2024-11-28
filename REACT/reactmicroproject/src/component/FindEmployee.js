@@ -24,7 +24,7 @@ class Find extends Component{
             eid:'',
             empName:'',
             empSalary:'',
-            result:'',
+           
             flag:false,
             eidError:'',
             empNameError:'',
@@ -46,57 +46,21 @@ class Find extends Component{
             return null;
         }
     }
-    validateempName = (empName) =>{
-        let reg=/^[a-zA-Z]+$/;
-        if(empName===''){
-            return "Emp Name is Required";
-        }
-        else if(!reg.test(empName)){
-            return "Invalid Emp Name"
-        }
-        else{
-            return null;
-        }
-
-    }
-    validateempSalary = (empSalary) =>{
-        let reg=/^[0-9]+$/;
-        if(empSalary===''){
-            return "Emp Salary is Required";
-        }
-        else if(!reg.test(empSalary)){
-            return "Invalid Emp Salary"
-        }
-        else{
-            return null;
-        }
-    }
+   
     changeId = (e) =>{
         this.setState({eid:e.target.value})
         let error=this.validateEid(this.state.eid);
         this.setState({eidError:error})
     }
-    changeName = (e) =>{
-        this.setState({empName:e.target.value})
-        let error1=this.validateempName(this.state.empName);
-        this.setState({empNameError:error1})
-    }
-    changeSalary = (e) =>{
-        this.setState({empSalary:e.target.value})
-        let error2=this.validateempSalary(this.state.empSalary);
-        this.setState({empSalaryError:error2})
-    }
+   
     handleSubmit = (e) =>{
         e.preventDefault();
         let error=this.validateEid(this.state.eid);
         this.setState({eidError:error})
-        let error1=this.validateempName(this.state.empName);
-        this.setState({empNameError:error1})
-        let error2=this.validateempSalary(this.state.empSalary);
-        this.setState({empSalaryError:error2})  
+      
         if(!error){
             this.setState({flag:true})
-            axios.get("http://localhost:3004/employees/"+this.state.eid)
+            axios.get("http://localhost:1212/read-employee/"+this.state.eid)
             .then((response) =>{
                 console.log(response.data);      
                 this.setState({result: response.data})
@@ -124,9 +88,9 @@ class Find extends Component{
                 <br></br>
                 {this.state.flag ?  
                 <div align="center" id="Result"> 
-                       <h3>Employee Id:{this.state.result.id}</h3>
-                       <h3>Employee Id:{this.state.result.name}</h3>
-                       <h3>Employee Id:{this.state.result.salary}</h3>
+                       <h3>Employee Id:{this.state.result.empId}</h3>
+                       <h3>Employee Id:{this.state.result.empName}</h3>
+                       <h3>Employee Id:{this.state.result.empSalary}</h3>
                        <h3>{this.state.message}</h3>
                 </div>
                 :''

@@ -54,52 +54,20 @@ class DELETE extends Component{
             return null;
         }
     }
-    validateempName = (empName) =>{
-        let reg=/^[a-zA-Z]+$/;
-        if(empName===''){
-            return "Emp Name is Required";
-        }
-        else if(!reg.test(empName)){
-            return "Invalid Emp Name"
-        }
-        else{
-            return null;
-        }
-    }
-    validateempSalary = (empSalary) =>{
-        let reg=/^[0-9]+$/;
-        if(empSalary===''){
-            return "Emp Salary is Required";
-        }
-        else if(!reg.test(empSalary)){
-            return "Invalid Emp Salary"
-        }
-        else{
-            return null;
-        }
-    }
+   
     changeId = (e) =>{
         this.setState({eid:e.target.value})
         let error=this.validateEid(this.state.eid);
         this.setState({eidError:error})
     }
-    changeName = (e) =>{
-        this.setState({empName:e.target.value})
-        let error1=this.validateempName(this.state.empName);
-        this.setState({empNameError:error1})
-    }
-    changeSalary = (e) =>{
-        this.setState({empSalary:e.target.value})
-        let error2=this.validateempSalary(this.state.empSalary);
-        this.setState({empSalaryError:error2})
-    }
+  
     handleSubmit = (e) =>{
         e.preventDefault();
         let error=this.validateEid(this.state.eid);
         this.setState({eidError:error});
         if(!error){
             this.setState({flag:true})
-            axios.delete("http://localhost:3004/employees/"+this.state.eid)
+            axios.delete("http://localhost:1212/delete-employee/"+this.state.eid)
             .then(() =>{
             document.getElementById("Result").innerHTML="<b> Object has been deleted Successfully</b>"
             })

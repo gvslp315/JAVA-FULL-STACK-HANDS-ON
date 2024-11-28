@@ -159,6 +159,10 @@ import Update from './UpdateEmployee';
 import DELETE from './DeleteEmployee';
 import Find from './FindEmployee';
 import Findall from './FindAllEmployee';
+import FindByName from "./FindEmployeeByName";
+import DeleteByName from "./DeleteEmployeeByName";
+import FindBySalary from "./FindBySalary";
+import DeleteBySalary from "./DeleteBySalary";
 
 class Employee extends Component{
     render(){
@@ -171,7 +175,12 @@ class Employee extends Component{
                         <Link class="btn btn-secondary"to="/update">UPDATE</Link>&nbsp;&nbsp;
                         <Link class="btn btn-danger"to="/delete">DELETE</Link>&nbsp;&nbsp;
                         <Link class="btn btn-info" to="/find">FIND</Link>&nbsp;&nbsp;
-                        <Link class="btn btn-warning" to="/findall">FIND ALL</Link></nav>  
+                        <Link class="btn btn-warning" to="/findall">FIND ALL</Link>&nbsp;&nbsp;
+                        <Link class="btn btn-info" to="/findbyname">FIND by Name</Link>&nbsp;&nbsp;
+                        <Link class="btn btn-danger" to="/deletebyname">Delete by Name</Link>&nbsp;&nbsp;
+                        <Link class="btn btn-info" to="/findbysalary">Find by Salary</Link>&nbsp;&nbsp;
+                        <Link class="btn btn-primary" to="/deletebysalary">Delete by Salary</Link>&nbsp;&nbsp;
+                        </nav>  
                 <hr/>
                 <Routes>
                     <Route path="/insert" element={<Insert></Insert>}>
@@ -184,6 +193,14 @@ class Employee extends Component{
                     </Route>
                     <Route path="/findall" element={<Findall></Findall>}>
 
+                    </Route>
+                    <Route path="/findbyname" element={<FindByName></FindByName>}>
+                    </Route>
+                    <Route path="/deletebyname" element={<DeleteByName></DeleteByName>}>
+                    </Route>
+                    <Route path="/findbysalary" element={<FindBySalary></FindBySalary>}>
+                    </Route>
+                    <Route path="/deletebysalary" element={<DeleteBySalary></DeleteBySalary>}>
                     </Route>
                 </Routes>
             </div>

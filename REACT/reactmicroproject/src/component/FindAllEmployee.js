@@ -25,7 +25,7 @@ class Findall extends Component{
     }
     handleSubmit = () =>{
         this.state.flag=true
-        axios.get("http://localhost:3004/employees")
+        axios.get("http://localhost:1212/readall-employee")
         .then((response) =>{
             console.log(response.data);
             this.setState({employees: response.data})
@@ -54,10 +54,10 @@ class Findall extends Component{
               </thead>
               <tbody>
                 {this.state.employees.map((employee) => (
-                  <tr key={employee.id}>
-                    <td>{employee.id}</td>
-                    <td>{employee.name}</td>
-                    <td>{employee.salary}</td>
+                  <tr key={employee.empId}>
+                    <td>{employee.empId}</td>
+                    <td>{employee.empName}</td>
+                    <td>{employee.empSalary}</td>
                   </tr>
                 ))}
               </tbody>

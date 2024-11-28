@@ -21,7 +21,7 @@ class Update extends Component{
     constructor(){
         super()
         this.state={
-            eid:'',
+            empId:'',
             empName:'',
             empSalary:'',
             result:'',
@@ -31,12 +31,12 @@ class Update extends Component{
             empSalaryError:''
         }
     } 
-    validateEid = (eid) =>{
+    validateEid = (empId) =>{
         let reg=/^[0-9]+$/;
-        if(eid===''){
+        if(empId===''){
             return "Eid is Required";
         }
-        else if(!reg.test(eid)){
+        else if(!reg.test(empId)){
             return "Invalid eid"
         }
         else{
@@ -69,8 +69,8 @@ class Update extends Component{
         }
     }
     changeId = (e) =>{
-        this.setState({eid:e.target.value})
-        let error=this.validateEid(this.state.eid);
+        this.setState({empId:e.target.value})
+        let error=this.validateEid(this.state.empId);
         this.setState({eidError:error})
     }
     changeName = (e) =>{
@@ -85,7 +85,7 @@ class Update extends Component{
     }
     handleSubmit = (e) =>{
         e.preventDefault();
-        let error=this.validateEid(this.state.eid);
+        let error=this.validateEid(this.state.empId);
         this.setState({eidError:error})
         let error1=this.validateempName(this.state.empName);
         this.setState({empNameError:error1})
@@ -94,10 +94,11 @@ class Update extends Component{
         if(!error && !error1 && !error2){
             this.setState({flag:true})
             let employee =new Employee()
-            employee.setId(this.state.eid)
+            employee.setId(this.state.empId)
             employee.setName(this.state.empName)
             employee.setSalary(this.state.empSalary)
-            axios.put("http://localhost:3004/employees/"+this.state.eid,employee)
+            console.log(employee)
+            axios.put("http://localhost:1212/update-employee",employee)
             .then(() =>{
             document.getElementById("Result").innerHTML="<b> Object has been updated Successfully</b>"
             })
@@ -114,7 +115,7 @@ class Update extends Component{
                 <form class="form-horizontal"> 
                     <div className="form-group">
                 <label for="empid"><b>EMPLOYEE ID</b></label>
-                <input type="text" class="form-control" value={this.state.eid} onChange={this.changeId}></input>
+                <input type="text" class="form-control" value={this.state.empId} onChange={this.changeId}></input>
                 <br></br>
                 <div><font color='red'><b>{this.state.eidError}</b></font></div>
                 </div>
@@ -139,7 +140,7 @@ class Update extends Component{
                 {this.state.flag ? 
                 <table align="center">
                     <tr><th>Employee Id</th><th>Employee Name</th><th>Employee Salary</th></tr>
-                    <tr><td>{this.state.eid}</td><td>{this.state.empName}</td><td>{this.state.empSalary}</td></tr>
+                    <tr><td>{this.state.empId}</td><td>{this.state.empName}</td><td>{this.state.empSalary}</td></tr>
                    <div id="Result"></div>
                 </table>
                 :''
