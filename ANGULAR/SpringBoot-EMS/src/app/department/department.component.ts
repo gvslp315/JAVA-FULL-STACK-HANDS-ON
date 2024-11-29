@@ -28,11 +28,11 @@ export class DepartmentComponent {
   }
  
   deleteDepartment(data:any){
-    this.result=this.depService.deleteDepartment(data.depNo);
+    this.result=this.depService.deleteDepartment(data.deptId);
   }
   findDepartment(data:any){
-    let department:Department= this.depService.findDepartment(data.depNo);
-    this.result="Department Number:"+department.deptId+"    Department Name:"+department.deptName;
+    let department:Department= this.depService.findDepartment(data.deptId);
+    this.result="Department Number:"+department.deptId+"  Department Name:"+department.deptName;
   }
   findAllDepartment(){
     this.departmentArr=this.depService.findAllDepartment();

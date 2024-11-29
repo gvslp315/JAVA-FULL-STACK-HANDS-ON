@@ -17,7 +17,6 @@ export class EmployeeServiceService {
   insertEmployee(employee:Employee){
   //  this.http.post(this.url+"create-employee",employee).subscribe()
   this.http.post(this.url+"create-employee", employee).subscribe();
-  console.log(employee);
    return "employee details added successfully"
 
   }
@@ -36,13 +35,13 @@ export class EmployeeServiceService {
   
   findEmployee(empId:number){
    
-   this.http.get<Employee>(this.url+"read-employee/"+empId).subscribe(emp => this.employee = emp)
+   this.http.get<Employee>(this.url+"find-employee/"+empId).subscribe(emp => this.employee = emp)
    return this.employee
 
   }
 
   findAllEmployee(){
-   this.http.get<Employee[]>(this.url+"readall-employee").subscribe(empArr => this.employeeArr = empArr)
+   this.http.get<Employee[]>(this.url+"findall-employee").subscribe(empArr => this.employeeArr = empArr)
    return this.employeeArr
 
   }

@@ -17,18 +17,18 @@ export class DepartmentServiceService {
   }
   insertDepartment(department:Department){
    this.http.post(this.url+"create-department",department).subscribe()
-   return "employee details added successfully"
+   return "Department details added successfully"
 
   }
 
   updateDepartment(department:Department){
    this.http.put(this.url+"update-department",department).subscribe()
-     return "employee details updated successfully"
+     return "Department details updated successfully"
   }
 
   deleteDepartment(deptId:number){
    this.http.delete(this.url+"delete-department/"+deptId).subscribe()
-     return "employee details deleted successfully"
+     return "Department details deleted successfully"
 
   }
   

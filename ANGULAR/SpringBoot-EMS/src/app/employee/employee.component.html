@@ -5,7 +5,7 @@
     </head>
  
     <body>
-        <h1 align="center">Employee Management System</h1>
+        <h2 align="center">Employee Management System</h2>
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-10">
@@ -127,8 +127,8 @@
 
       <div align="center" width="80%">
         <table *ngIf="flag" border="4px solid brown" width="60%">
-          <tr><th>Employee Id</th><th>Employee Name</th><th>Employee </th></tr>
-          <tr *ngFor="let emp of employeeArr"><td>{{emp.empId}}</td><td>{{emp.empName}}</td><td>{{emp.empSalary}}</td></tr>
+          <tr><th>Employee Id</th><th>Employee Name</th><th>Employee Salary </th><th>Department ID</th></tr>
+          <tr *ngFor="let emp of employeeArr"><td>{{emp.empId}}</td><td>{{emp.empName}}</td><td>{{emp.empSalary}}</td><td>{{emp.department.deptId}}</td></tr>
         </table>
 
       </div>

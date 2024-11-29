@@ -23,8 +23,7 @@ export class EmployeeComponent {
     this.employee.empId=Data.empId;
     this.employee.empName=Data.empName;
     this.employee.empSalary=Data.empSalary;
-    //this.empService.insertEmployee(this.employee)
-    this.employee.dept.deptId=Data.deptId;
+    this.employee.department.deptId=Data.deptId;
     this.result=this.empService.insertEmployee(this.employee)
 
   }
@@ -33,8 +32,7 @@ export class EmployeeComponent {
     this.employee.empId=Data.empId;
     this.employee.empName=Data.empName;
     this.employee.empSalary=Data.empSalary
-    this.employee.dept.deptId=Data.deptId
-
+    this.employee.department.deptId=Data.deptId;
     this.result=this.empService.updateEmployee(this.employee)
 
   }
@@ -46,7 +44,7 @@ export class EmployeeComponent {
 
   findEmployee(Data:any){
     let employee:Employee=this.empService.findEmployee(Data.empId)
-    this.result=employee.empId +"   "+ employee.empName +"     "+employee.empSalary
+    this.result=employee.empId +"   "+ employee.empName +"     "+employee.empSalary+"  "+employee.department.deptId
   }
   
   findAllEmployee(){
